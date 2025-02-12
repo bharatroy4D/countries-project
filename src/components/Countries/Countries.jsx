@@ -7,7 +7,8 @@ const Countries = () => {
     const [visitedCountries, setVisitedCountries] = useState([]);
 
     function handleVisitedCountries(country) {
-        
+        const newVisitedCountries =[...visitedCountries, country];
+        setVisitedCountries(newVisitedCountries);
     }
 
     useEffect(() => {
@@ -19,6 +20,7 @@ const Countries = () => {
     return (
         <div>
             <h3>Countries:{countries.length}</h3>
+            <h3>Visited Countries:{visitedCountries.length}</h3>
             <div className='countries-container'>
                 {
                     countries.map(country => <Country

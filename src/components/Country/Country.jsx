@@ -13,9 +13,9 @@ const Country = ({country, handleVisitedCountries}) => {
             <h2>country: {name.common}</h2>
             <img src={flags.png} alt="" />
             <button onClick={countriesVisited}>{visited ? 'visited':'going'}</button>
+            {visited ? 'this site visited':'i want to visited this country'}
             <br />
             <button onClick={() =>handleVisitedCountries(country)}>visitedCountries</button>
-            {visited ? 'this site visited':'i want to visited this country'}
         </div>
     );
 };
