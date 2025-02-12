@@ -4,7 +4,11 @@ import './countries.css'
 
 const Countries = () => {
     const [countries, setCountries] = useState([]);
-    console.log(countries)
+    const [visitedCountries, setVisitedCountries] = useState([]);
+
+    function handleVisitedCountries(country) {
+        
+    }
 
     useEffect(() => {
         fetch('https://restcountries.com/v3.1/all')
@@ -17,7 +21,11 @@ const Countries = () => {
             <h3>Countries:{countries.length}</h3>
             <div className='countries-container'>
                 {
-                    countries.map(country => <Country key={country.cca3} country={country}></Country>)
+                    countries.map(country => <Country
+                        key={country.cca3}
+                        country={country}
+                        handleVisitedCountries={handleVisitedCountries}
+                    ></Country>)
                 }
             </div>
         </div>
